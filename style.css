@@ -1,0 +1,284 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*fonts fetching*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/*colors for the template*/
+:root {
+	--background-color: #ffffff;
+	--text-color: #333;
+	--border-color: #000;
+}
+
+/*utilities*/
+hr {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.container {
+	max-width: 1100px;
+	margin: 0 auto;
+	background-color: var(--background-color);
+	/*border: 1px solid var(--border-color);*/
+	padding: 5px 20px;
+}
+
+.flex {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	height: 100%;
+}
+
+.content .flex {
+    flex-direction: column;
+}
+
+.content h1,h2,h3,h4{
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+.content p, .content ul{
+	text-align: left;
+	padding: 10px;
+	line-height: 25px;
+}
+
+.content ul{
+	margin-left: 25px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight: 300;
+	margin: 10px 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+html,body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.form hr{
+	margin: 10px 0;
+}
+/*end utilities*/
+
+.navbar {
+	background-color: var(--background-color);
+	height: 70px;
+	width: 100%;
+}
+
+.navbar .flex {
+	justify-content: space-between;
+}
+
+.navbar .flex ul {
+	display: flex;
+}
+
+.navbar ul li{
+	padding: 0 15px;
+	margin: 10px;
+	list-style: none;
+}
+
+.form {
+	margin: 5px auto;
+	/*border: 1px solid red;*/
+}
+
+.form1 .form-control {
+	padding: 20px;
+}
+
+.form1 .form-control input[type="text"]{
+	padding: 7px;
+	/*margin: 0 5px;*/
+	border-radius: 5px;
+	border: 1px solid var(--border-color);
+    width: 50%;
+    float: right;
+}
+
+.form1 .form-control input[type="checkbox"]{
+	padding: 10px;
+	/*margin: 0 5px;*/
+	border-radius: 5px;
+	border: 1px solid var(--border-color);
+    float: right;
+    width: 300px;
+    overflow: auto;
+}
+
+.form1 .form-control select{
+	padding: 7px;
+	/*margin: 0 5px;*/
+	border-radius: 5px;
+	border: 1px solid var(--border-color);
+    float: right;
+    width: 190px;
+}
+
+.form1 .form-control input[type="text"]:focus{
+	outline: none;
+}
+
+.btn {
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	background-color: green;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.btn:hover {
+	background-color: #1e894b;
+}
+
+.result {
+	/*margin-left: 70px;*/
+	width: 50%;
+}
+
+.preview {
+	display: flex;
+	justify-content: right;
+	flex-direction: column;
+	align-items: center;
+}
+
+.result textarea{
+	height: 300px;
+	width: 400px;
+	text-align: left;
+	padding: 20px;
+}
+
+.result textarea:focus{
+	outline: none;
+}
+
+footer {
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*making template responsive*/
+/*tablet mode max 760px*/
+@media(max-width: 874px){
+
+	.navbar {
+       height: auto;
+	}
+
+	.navbar .flex{
+		flex-direction: column;
+	}
+
+	.result {
+		margin: auto;
+	}
+}
+
+@media(max-width: 797px){
+
+	.form .flex{
+      justify-content: center;
+      flex-direction: column;
+	}
+
+	.form .form1::after{
+	content: '';
+	position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: #cccccc; 
+    top: 100%;
+    left: 0;
+    display: inline-block;
+	}
+
+	.result {
+		width: 100%;
+	}
+}
+
+
+
+/*mobile mode max 500px*/
+@media(max-width: 500px){
+
+	.navbar h1{
+       font-size: 20px;
+	}
+
+	.navbar ul li{
+		padding: auto;
+		margin: auto;
+	} 
+
+	.preview h2{
+		font-size: 20px;
+	}
+
+	.result {
+		width: 100%;
+	}
+
+    .result form {
+       width: 100%;
+    } 
+
+    .result textarea{
+    	width: 100%;
+    	height: 300px;
+    }
+
+    .form1 .form-control input[type="text"]{
+       width: 100%;
+	}
+
+	.form1 .form-control input[type="checkbox"]{
+		 width: 100%;
+	}
+
+	.form1 .form-control select{
+		 width: 100%;
+	}
+}
+
+@media(max-width: 340px){
+	.navbar ul li{
+		font-size: 13px;
+	}
+
+	textarea {
+		width: 100%;
+		height: auto;
+	}
+
+	.form1 .form-control input[type="text"],
+	.form1 .form-control input[type="checkbox"],
+	.form1 .form-control select{
+	
+	    width: 100%;
+	}
+
+    .container {
+    	padding: unset;
+    }
+}
